@@ -8,13 +8,15 @@
 
 import UIKit
 
-class GalleryViewController: UIViewController, UISearchBarDelegate {
+class GalleryViewController: UIViewController {
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     var galleryManager = GalleryManager()
     
     private var searches: [Thumb] = []
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    private let itemsPerRow: CGFloat = 3
+    private let sectionInsets = UIEdgeInsets(top: 2.0, left: 1.0, bottom: 2.0, right: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +24,24 @@ class GalleryViewController: UIViewController, UISearchBarDelegate {
         galleryManager.delegate = self
         
         setupCollectionView()
-        createSearchBar()
+        setupSearchBar()
     }
     
     func setupCollectionView(){
         collectionView.dataSource = self
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = sectionInsets
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        let totalSpace = layout.minimumInteritemSpacing + layout.minimumLineSpacing + sectionInsets.left + sectionInsets.right
+        
+        layout.itemSize = CGSize(width: (self.collectionView.bounds.size.width - totalSpace)/itemsPerRow, height: (self.collectionView.bounds.size.width - totalSpace)/itemsPerRow)
+        
+        collectionView.collectionViewLayout = layout
     }
     
-    func createSearchBar(){
+    func setupSearchBar(){
         let searchBar = UISearchBar()
         searchBar.showsCancelButton = false
         searchBar.placeholder = "Search"
@@ -37,16 +49,15 @@ class GalleryViewController: UIViewController, UISearchBarDelegate {
         
         self.navigationItem.titleView = searchBar
     }
-    
+}
+
+extension GalleryViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let textToSearch = searchBar.text {
             galleryManager.fetchGallery(keyword: textToSearch)
             self.collectionView?.reloadData()
         }
     }
-    
-    
-    
 }
 
 extension GalleryViewController: GalleryManagerDelegate {
@@ -74,7 +85,5 @@ extension GalleryViewController: UICollectionViewDataSource {
         // Configure the cell
         return cell
     }
-    
-    
 }
 
