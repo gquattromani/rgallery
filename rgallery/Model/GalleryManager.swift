@@ -55,7 +55,10 @@ struct GalleryManager {
         var res: [Thumb] = []
         let children = decodedData.data.children
         for child in children {
-            res.append(Thumb(title: child.data.title, url: child.data.thumbnail, subreddit: child.data.subreddit))
+            let thumb = Thumb(title: child.data.title, url: child.data.thumbnail, subreddit: child.data.subreddit)
+            if thumb.isValid {
+                res.append(thumb)
+            }
         }
         return res
     }
