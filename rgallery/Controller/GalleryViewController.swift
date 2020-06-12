@@ -37,7 +37,7 @@ class GalleryViewController: UIViewController {
         layout.minimumLineSpacing = 1
         let totalSpace = layout.minimumInteritemSpacing + layout.minimumLineSpacing + sectionInsets.left + sectionInsets.right
         
-        layout.itemSize = CGSize(width: (self.collectionView.bounds.size.width - totalSpace)/itemsPerRow, height: (self.collectionView.bounds.size.width - totalSpace)/itemsPerRow)
+        layout.itemSize = CGSize(width: (collectionView.bounds.size.width - totalSpace)/itemsPerRow, height: (collectionView.bounds.size.width - totalSpace)/itemsPerRow)
         
         collectionView.collectionViewLayout = layout
     }
@@ -48,7 +48,7 @@ class GalleryViewController: UIViewController {
         searchBar.placeholder = "Search"
         searchBar.delegate = self
         
-        self.navigationItem.titleView = searchBar
+        navigationItem.titleView = searchBar
     }
 }
 
@@ -56,7 +56,13 @@ extension GalleryViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let textToSearch = searchBar.text {
             galleryManager.fetchGallery(keyword: textToSearch)
-            self.collectionView?.reloadData()
+            collectionView.reloadData()
+        }
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searches.removeAll()
+            collectionView.reloadData()
         }
     }
 }
@@ -99,7 +105,7 @@ extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destination = storyboard?.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController
         destination?.thumb = searches[indexPath.row]
-        self.navigationController?.pushViewController(destination!, animated: true)
+        navigationController?.pushViewController(destination!, animated: true)
     }
 }
 
