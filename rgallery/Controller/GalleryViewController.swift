@@ -69,7 +69,7 @@ extension GalleryViewController: GalleryManagerDelegate {
     }
     
     func didFailWithError(error: Error) {
-        print(error)
+        print("404: Not Found")
     }
     
 }
@@ -80,9 +80,12 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbCell", for: indexPath)
-        cell.backgroundColor = .black
-        // Configure the cell
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbCell", for: indexPath) as! PhotoCollectionViewCell
+        let rThumb = searches[indexPath.row]
+        cell.backgroundColor = .white
+        cell.imageView.loadImageFromUrlString(urlString: rThumb.url)
+          
         return cell
     }
 }

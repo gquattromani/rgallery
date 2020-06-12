@@ -17,7 +17,7 @@ struct GalleryManager {
     var delegate: GalleryManagerDelegate?
     
     func fetchGallery(keyword: String){
-        let url = "https://www.reddit.com/r/\(keyword)/top.json"
+        let url = "https://www.reddit.com/r/\(keyword.lowercased())/top.json"
         performRequest(with: url)
     }
     
