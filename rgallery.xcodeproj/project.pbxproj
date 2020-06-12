@@ -20,6 +20,7 @@
 		4384514A249180BF00772280 /* GalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43845149249180BF00772280 /* GalleryManager.swift */; };
 		43B8784E249386EC00901056 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8784D249386EC00901056 /* Extensions.swift */; };
 		43B878502493925A00901056 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8784F2493925A00901056 /* PhotoCollectionViewCell.swift */; };
+		43EBF7A52494327800D15735 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EBF7A42494327800D15735 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		43845149249180BF00772280 /* GalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryManager.swift; sourceTree = "<group>"; };
 		43B8784D249386EC00901056 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43B8784F2493925A00901056 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		43EBF7A42494327800D15735 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				4384511624917A6600772280 /* GalleryViewController.swift */,
 				43B8784F2493925A00901056 /* PhotoCollectionViewCell.swift */,
+				43EBF7A42494327800D15735 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				4384514A249180BF00772280 /* GalleryManager.swift in Sources */,
 				43B878502493925A00901056 /* PhotoCollectionViewCell.swift in Sources */,
+				43EBF7A52494327800D15735 /* DetailsViewController.swift in Sources */,
 				4384511724917A6600772280 /* GalleryViewController.swift in Sources */,
 				4384511324917A6600772280 /* AppDelegate.swift in Sources */,
 				4384514624917B8100772280 /* GalleryData.swift in Sources */,

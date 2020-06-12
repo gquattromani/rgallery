@@ -29,6 +29,7 @@ class GalleryViewController: UIViewController {
     
     func setupCollectionView(){
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = sectionInsets
@@ -85,8 +86,20 @@ extension GalleryViewController: UICollectionViewDataSource {
         let rThumb = searches[indexPath.row]
         cell.backgroundColor = .white
         cell.imageView.loadImageFromUrlString(urlString: rThumb.url)
-          
+        cell.label.text = rThumb.subreddit
+        
+        cell.contentView.layer.cornerRadius = 5.0
+        cell.contentView.layer.masksToBounds = true
+        
         return cell
+    }
+}
+
+extension GalleryViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let destination = storyboard?.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController
+        destination?.thumb = searches[indexPath.row]
+        self.navigationController?.pushViewController(destination!, animated: true)
     }
 }
 

@@ -36,17 +36,30 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-mx-c7w">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                 </imageView>
+                                                <label userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYV-Bn-yv7">
+                                                    <rect key="frame" x="8" y="175" width="184" height="17"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cWH-mx-c7w" firstAttribute="top" secondItem="VwK-o0-Mah" secondAttribute="top" id="0ZS-cm-cN9"/>
+                                                <constraint firstItem="CYV-Bn-yv7" firstAttribute="leading" secondItem="VwK-o0-Mah" secondAttribute="leading" constant="8" id="5J1-f8-mC6"/>
                                                 <constraint firstItem="cWH-mx-c7w" firstAttribute="leading" secondItem="VwK-o0-Mah" secondAttribute="leading" id="ABE-9M-FbD"/>
                                                 <constraint firstAttribute="trailing" secondItem="cWH-mx-c7w" secondAttribute="trailing" id="AaI-15-06F"/>
                                                 <constraint firstAttribute="bottom" secondItem="cWH-mx-c7w" secondAttribute="bottom" id="NX5-B0-fwW"/>
+                                                <constraint firstAttribute="trailing" secondItem="CYV-Bn-yv7" secondAttribute="trailing" constant="8" id="Tkb-P3-jsv"/>
+                                                <constraint firstAttribute="bottom" secondItem="CYV-Bn-yv7" secondAttribute="bottom" constant="8" id="vj0-eC-sDo"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="200"/>
                                         <connections>
                                             <outlet property="imageView" destination="cWH-mx-c7w" id="Hpo-sG-Xst"/>
+                                            <outlet property="label" destination="CYV-Bn-yv7" id="a3W-T5-zgL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -64,11 +77,28 @@
                     <navigationItem key="navigationItem" id="JJS-nO-psy"/>
                     <connections>
                         <outlet property="collectionView" destination="l5R-7K-qh7" id="wRn-JK-d23"/>
+                        <segue destination="JvX-UP-CHF" kind="show" identifier="thumbDetails" id="A1n-ew-dt0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="0PW-vA-Cmd">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JvX-UP-CHF" customClass="DetailsViewController" customModule="rgallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RJ5-xD-ich">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sji-UX-uuS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n80-Um-ain"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPN-M4-cTb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lTY-sh-HWp">
