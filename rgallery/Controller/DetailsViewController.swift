@@ -25,7 +25,7 @@ class DetailsViewController: UIViewController {
     }
     
     func setupViews(){
-        title = thumb.subreddit
+        title = thumb.title
         label.text = thumb.title
         imageView.loadImageFromUrlString(urlString: self.thumb.url)
         setupCollectionView()
@@ -33,6 +33,7 @@ class DetailsViewController: UIViewController {
     
     func setupCollectionView(){
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         collectionView.register(UINib(nibName: "DetailsViewCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "DetailsViewCollectionViewCell")
         
@@ -63,5 +64,19 @@ extension DetailsViewController: UICollectionViewDataSource {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "DetailsViewCollectionViewCell", for: indexPath) as! DetailsViewCollectionViewCell
         cell.configureCell(url: others[indexPath.row].url)
         return cell
+    }
+}
+
+extension DetailsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let destination = storyboard?.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController
+        destination?.thumb = others[indexPath.row]
+        destination?.others = others.enumerated().filter{ index, element in
+            return index != indexPath.row
+        }
+        .map{ index, element in
+            return element
+        }
+        navigationController?.pushViewController(destination!, animated: true)
     }
 }
