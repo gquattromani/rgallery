@@ -13,4 +13,19 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    private func setupUI(){
+        backgroundColor = .white
+        contentView.layer.cornerRadius = 5.0
+        contentView.layer.masksToBounds = true
+    }
+    
+    func configureCell(url: String, text: String){
+        imageView.loadImageFromUrlString(urlString: url)
+        label.text = text
+    }
+    
 }

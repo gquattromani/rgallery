@@ -9,10 +9,15 @@
 import UIKit
 
 class DetailsViewCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet private weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func configureCell(url: String){
+        imageView.loadImageFromUrlString(urlString: url)
     }
 
 }

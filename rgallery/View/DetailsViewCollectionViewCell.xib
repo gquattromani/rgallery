@@ -10,15 +10,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DetailsViewCollectionViewCell" customModule="rgallery" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="531" height="298"/>
+            <rect key="frame" x="0.0" y="0.0" width="492" height="491"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="531" height="298"/>
+                <rect key="frame" x="0.0" y="0.0" width="492" height="491"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nH6-Fa-TTh">
+                        <rect key="frame" x="0.0" y="0.0" width="492" height="491"/>
+                    </imageView>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="nH6-Fa-TTh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EqH-bS-Sl1"/>
+                <constraint firstAttribute="trailing" secondItem="nH6-Fa-TTh" secondAttribute="trailing" id="V2d-JR-lTj"/>
+                <constraint firstItem="nH6-Fa-TTh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="W8y-P7-cmC"/>
+                <constraint firstAttribute="bottom" secondItem="nH6-Fa-TTh" secondAttribute="bottom" id="e6J-KS-Cut"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="531" height="298"/>
-            <point key="canvasLocation" x="486.23188405797106" y="195.53571428571428"/>
+            <size key="customSize" width="492" height="491"/>
+            <connections>
+                <outlet property="imageView" destination="nH6-Fa-TTh" id="lCJ-wD-lq3"/>
+            </connections>
+            <point key="canvasLocation" x="457.97101449275368" y="260.15625"/>
         </collectionViewCell>
     </objects>
 </document>
