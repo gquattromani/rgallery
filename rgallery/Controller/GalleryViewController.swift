@@ -15,7 +15,7 @@ class GalleryViewController: UIViewController {
     
     private var searches: [Thumb] = []
     
-    private let itemsPerRow: CGFloat = 3
+    private let itemsPerRow: CGFloat = 2
     private let sectionInsets = UIEdgeInsets(top: 2.0, left: 1.0, bottom: 2.0, right: 1.0)
     
     override func viewDidLoad() {
