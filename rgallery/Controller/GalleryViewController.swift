@@ -30,6 +30,7 @@ class GalleryViewController: UIViewController {
     func setupCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.setEmptyMessage()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = sectionInsets
@@ -61,8 +62,8 @@ extension GalleryViewController: UISearchBarDelegate{
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            searches.removeAll()
-            collectionView.reloadData()
+            collectionView.setEmptyMessage()
+            clearAll()
         }
     }
 }
@@ -71,12 +72,16 @@ extension GalleryViewController: GalleryManagerDelegate {
     func didUpdateData(_ galleryManager: GalleryManager, gallery: GalleryModel) {
         DispatchQueue.main.async { [weak self] in
             self?.searches = gallery.thumbs
+            self?.searches.count == 0 ? self?.collectionView.setNoResultsMessage() : self?.collectionView.restoreBackground()
             self?.collectionView.reloadData()
         }
     }
     
     func didFailWithError(error: Error) {
-        print("404: Not Found")
+        DispatchQueue.main.async { [weak self] in
+            self?.clearAll()
+            self?.collectionView.setNoResultsMessage()
+        }
     }
     
 }
@@ -87,11 +92,15 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbCell", for: indexPath) as! PhotoCollectionViewCell
         let rThumb = searches[indexPath.row]
         cell.configureCell(url: rThumb.url, text: rThumb.subreddit)
         return cell
+    }
+    
+    func clearAll(){
+        searches.removeAll()
+        collectionView.reloadData()
     }
 }
 
