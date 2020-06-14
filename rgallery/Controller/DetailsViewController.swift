@@ -27,7 +27,7 @@ class DetailsViewController: UIViewController {
     func setupViews(){
         title = thumb.title
         label.text = thumb.title
-        imageView.loadImageFromUrlString(urlString: self.thumb.url)
+        imageView.loadImageFromUrlStringWithCache(urlString: self.thumb.url)
         setupCollectionView()
     }
     

@@ -24,7 +24,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(url: String, text: String){
-        imageView.loadImageFromUrlString(urlString: url)
+        imageView.loadImageFromUrlStringWithCache(urlString: url)
         label.text = text
     }
     

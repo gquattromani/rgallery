@@ -17,7 +17,7 @@ class DetailsViewCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(url: String){
-        imageView.loadImageFromUrlString(urlString: url)
+        imageView.loadImageFromUrlStringWithCache(urlString: url)
     }
 
 }
