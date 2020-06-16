@@ -29,7 +29,7 @@ extension UIImageView {
         if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
             self.image = image
         } else {
-            self.image = UIImage(named: "placeholder")
+            self.image = UIImage(named: K.placeholderImage)
             URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if let data = data, let response = response, ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300, let image = UIImage(data: data) {
                     let cachedData = CachedURLResponse(response: response, data: data)

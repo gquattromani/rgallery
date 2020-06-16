@@ -45,7 +45,7 @@ class GalleryViewController: UIViewController {
     func setupSearchBar(){
         let searchBar = UISearchBar()
         searchBar.showsCancelButton = false
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = LocalizedStrings.search_bar_placeholder
         searchBar.delegate = self
         
         navigationItem.titleView = searchBar
@@ -92,7 +92,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbCell", for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.thumbCellIdentifier, for: indexPath) as! PhotoCollectionViewCell
         let rThumb = searches[indexPath.row]
         cell.configureCell(url: rThumb.url, text: rThumb.subreddit)
         return cell
@@ -106,7 +106,7 @@ extension GalleryViewController: UICollectionViewDataSource {
 
 extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let destination = storyboard?.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController
+        let destination = storyboard?.instantiateViewController(identifier: K.detailsViewControllerIdentifier) as? DetailsViewController
         destination?.thumb = searches[indexPath.row]
         destination?.others = searches.enumerated().filter{ index, element in
             return index != indexPath.row

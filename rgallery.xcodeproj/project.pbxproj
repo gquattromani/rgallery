@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431A8139249933EA0020783A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 431A813B249933EA0020783A /* Localizable.strings */; };
+		431A813F2499341D0020783A /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A813E2499341D0020783A /* LocalizedStrings.swift */; };
+		431A8141249936460020783A /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A8140249936460020783A /* K.swift */; };
+		431A8142249936C30020783A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431A8144249936C30020783A /* EmptyView.xib */; };
 		437FAE242495091D00ADAD4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437FAE232495091D00ADAD4C /* Assets.xcassets */; };
 		437FAE292495215F00ADAD4C /* DetailsViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAE272495215F00ADAD4C /* DetailsViewCollectionViewCell.swift */; };
 		437FAE2A2495215F00ADAD4C /* DetailsViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437FAE282495215F00ADAD4C /* DetailsViewCollectionViewCell.xib */; };
@@ -21,7 +25,6 @@
 		4384514824917FF500772280 /* GalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4384514724917FF500772280 /* GalleryModel.swift */; };
 		4384514A249180BF00772280 /* GalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43845149249180BF00772280 /* GalleryManager.swift */; };
 		43949B582497F53800640597 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43949B572497F53800640597 /* UIImageView+Cache.swift */; };
-		43A73DF7249676A400813769 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A73DF6249676A400813769 /* EmptyView.xib */; };
 		43A73DF924967F1A00813769 /* NoResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A73DF824967F1A00813769 /* NoResultsView.xib */; };
 		43B8784E249386EC00901056 /* UICollectionView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8784D249386EC00901056 /* UICollectionView+EmptyState.swift */; };
 		43B878502493925A00901056 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8784F2493925A00901056 /* PhotoCollectionViewCell.swift */; };
@@ -46,6 +49,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		431A81352499336C0020783A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		431A81362499336D0020783A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		431A813A249933EA0020783A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		431A813C249933ED0020783A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		431A813E2499341D0020783A /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		431A8140249936460020783A /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		431A8145249936C90020783A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyView.xib; sourceTree = "<group>"; };
+		431A8147249936E00020783A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EmptyView.strings; sourceTree = "<group>"; };
 		437FAE232495091D00ADAD4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Desktop/rgallery_logo/Assets.xcassets; sourceTree = "<group>"; };
 		437FAE272495215F00ADAD4C /* DetailsViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		437FAE282495215F00ADAD4C /* DetailsViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -66,7 +77,6 @@
 		4384514724917FF500772280 /* GalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryModel.swift; sourceTree = "<group>"; };
 		43845149249180BF00772280 /* GalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryManager.swift; sourceTree = "<group>"; };
 		43949B572497F53800640597 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
-		43A73DF6249676A400813769 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		43A73DF824967F1A00813769 /* NoResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoResultsView.xib; sourceTree = "<group>"; };
 		43B8784D249386EC00901056 /* UICollectionView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EmptyState.swift"; sourceTree = "<group>"; };
 		43B8784F2493925A00901056 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -98,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431A813D2499340B0020783A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				431A813E2499341D0020783A /* LocalizedStrings.swift */,
+				431A8140249936460020783A /* K.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		4384510624917A6600772280 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +140,7 @@
 		4384511124917A6600772280 /* rgallery */ = {
 			isa = PBXGroup;
 			children = (
+				431A813D2499340B0020783A /* Constants */,
 				4384514324917AC500772280 /* Model */,
 				4384514224917AAD00772280 /* View */,
 				4384514424917ACF00772280 /* Controller */,
@@ -128,8 +148,8 @@
 				4384511224917A6600772280 /* AppDelegate.swift */,
 				4384511424917A6600772280 /* SceneDelegate.swift */,
 				437FAE232495091D00ADAD4C /* Assets.xcassets */,
-				4384511D24917A6700772280 /* LaunchScreen.storyboard */,
 				4384512024917A6700772280 /* Info.plist */,
+				431A813B249933EA0020783A /* Localizable.strings */,
 			);
 			path = rgallery;
 			sourceTree = "<group>";
@@ -156,9 +176,10 @@
 		4384514224917AAD00772280 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4384511D24917A6700772280 /* LaunchScreen.storyboard */,
 				4384511824917A6600772280 /* Main.storyboard */,
 				437FAE282495215F00ADAD4C /* DetailsViewCollectionViewCell.xib */,
-				43A73DF6249676A400813769 /* EmptyView.xib */,
+				431A8144249936C30020783A /* EmptyView.xib */,
 				43A73DF824967F1A00813769 /* NoResultsView.xib */,
 			);
 			path = View;
@@ -287,6 +308,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 4384510624917A6600772280;
 			productRefGroup = 4384511024917A6600772280 /* Products */;
@@ -308,9 +330,10 @@
 				4384511F24917A6700772280 /* LaunchScreen.storyboard in Resources */,
 				437FAE242495091D00ADAD4C /* Assets.xcassets in Resources */,
 				437FAE2A2495215F00ADAD4C /* DetailsViewCollectionViewCell.xib in Resources */,
+				431A8139249933EA0020783A /* Localizable.strings in Resources */,
 				4384511A24917A6600772280 /* Main.storyboard in Resources */,
 				43A73DF924967F1A00813769 /* NoResultsView.xib in Resources */,
-				43A73DF7249676A400813769 /* EmptyView.xib in Resources */,
+				431A8142249936C30020783A /* EmptyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,11 +363,13 @@
 				437FAE292495215F00ADAD4C /* DetailsViewCollectionViewCell.swift in Sources */,
 				43EBF7A52494327800D15735 /* DetailsViewController.swift in Sources */,
 				4384511724917A6600772280 /* GalleryViewController.swift in Sources */,
+				431A8141249936460020783A /* K.swift in Sources */,
 				4384511324917A6600772280 /* AppDelegate.swift in Sources */,
 				4384514624917B8100772280 /* GalleryData.swift in Sources */,
 				4384511524917A6600772280 /* SceneDelegate.swift in Sources */,
 				43949B582497F53800640597 /* UIImageView+Cache.swift in Sources */,
 				4384514824917FF500772280 /* GalleryModel.swift in Sources */,
+				431A813F2499341D0020783A /* LocalizedStrings.swift in Sources */,
 				43B8784E249386EC00901056 /* UICollectionView+EmptyState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,10 +406,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		431A813B249933EA0020783A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431A813A249933EA0020783A /* en */,
+				431A813C249933ED0020783A /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		431A8144249936C30020783A /* EmptyView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431A8145249936C90020783A /* Base */,
+				431A8147249936E00020783A /* it */,
+			);
+			name = EmptyView.xib;
+			sourceTree = "<group>";
+		};
 		4384511824917A6600772280 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4384511924917A6600772280 /* Base */,
+				431A81362499336D0020783A /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -393,6 +437,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4384511E24917A6700772280 /* Base */,
+				431A81352499336C0020783A /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -404,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -464,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

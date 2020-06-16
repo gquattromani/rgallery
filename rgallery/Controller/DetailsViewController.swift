@@ -35,7 +35,7 @@ class DetailsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UINib(nibName: "DetailsViewCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "DetailsViewCollectionViewCell")
+        collectionView.register(UINib(nibName: K.detailsCellIdentifier, bundle: .main), forCellWithReuseIdentifier: K.detailsCellIdentifier)
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 1
@@ -61,7 +61,7 @@ extension DetailsViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "DetailsViewCollectionViewCell", for: indexPath) as! DetailsViewCollectionViewCell
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: K.detailsCellIdentifier, for: indexPath) as! DetailsViewCollectionViewCell
         cell.configureCell(url: others[indexPath.row].url)
         return cell
     }
@@ -69,7 +69,7 @@ extension DetailsViewController: UICollectionViewDataSource {
 
 extension DetailsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let destination = storyboard?.instantiateViewController(identifier: "DetailsViewController") as? DetailsViewController
+        let destination = storyboard?.instantiateViewController(identifier: K.detailsViewControllerIdentifier) as? DetailsViewController
         destination?.thumb = others[indexPath.row]
         destination?.others = others.enumerated().filter{ index, element in
             return index != indexPath.row

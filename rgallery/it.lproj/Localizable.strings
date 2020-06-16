@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  rgallery
+
+  Created by gquatt on 16/06/2020.
+  Copyright © 2020 gquattromani. All rights reserved.
+*/
+
+"search_bar_placeholder" = "Cerca";
