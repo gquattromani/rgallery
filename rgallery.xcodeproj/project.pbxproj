@@ -11,6 +11,8 @@
 		431A813F2499341D0020783A /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A813E2499341D0020783A /* LocalizedStrings.swift */; };
 		431A8141249936460020783A /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A8140249936460020783A /* K.swift */; };
 		431A8142249936C30020783A /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431A8144249936C30020783A /* EmptyView.xib */; };
+		431A814D24994B960020783A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A814C24994B960020783A /* HttpClient.swift */; };
+		431A814F2499545E0020783A /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A814E2499545E0020783A /* URLSessionMock.swift */; };
 		437FAE242495091D00ADAD4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437FAE232495091D00ADAD4C /* Assets.xcassets */; };
 		437FAE292495215F00ADAD4C /* DetailsViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAE272495215F00ADAD4C /* DetailsViewCollectionViewCell.swift */; };
 		437FAE2A2495215F00ADAD4C /* DetailsViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437FAE282495215F00ADAD4C /* DetailsViewCollectionViewCell.xib */; };
@@ -58,6 +60,8 @@
 		431A8145249936C90020783A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmptyView.xib; sourceTree = "<group>"; };
 		431A8147249936E00020783A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EmptyView.strings; sourceTree = "<group>"; };
 		431A814A249944CA0020783A /* mockJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockJson.json; sourceTree = "<group>"; };
+		431A814C24994B960020783A /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		431A814E2499545E0020783A /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		437FAE232495091D00ADAD4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Desktop/rgallery_logo/Assets.xcassets; sourceTree = "<group>"; };
 		437FAE272495215F00ADAD4C /* DetailsViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		437FAE282495215F00ADAD4C /* DetailsViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -126,11 +130,12 @@
 			path = "Manager Tests";
 			sourceTree = "<group>";
 		};
-		431A81492499432E0020783A /* ViewController Tests */ = {
+		431A814B24994B790020783A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				431A814C24994B960020783A /* HttpClient.swift */,
 			);
-			name = "ViewController Tests";
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		4384510624917A6600772280 = {
@@ -173,7 +178,6 @@
 		4384512824917A6700772280 /* rgalleryTests */ = {
 			isa = PBXGroup;
 			children = (
-				431A81492499432E0020783A /* ViewController Tests */,
 				431A8148249943210020783A /* Manager Tests */,
 				43949B562497F3BD00640597 /* Mocks */,
 				4384512B24917A6700772280 /* Info.plist */,
@@ -205,6 +209,7 @@
 		4384514324917AC500772280 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				431A814B24994B790020783A /* Networking */,
 				4384514524917B8100772280 /* GalleryData.swift */,
 				4384514724917FF500772280 /* GalleryModel.swift */,
 				43845149249180BF00772280 /* GalleryManager.swift */,
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				431A814A249944CA0020783A /* mockJson.json */,
+				431A814E2499545E0020783A /* URLSessionMock.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				43B878502493925A00901056 /* PhotoCollectionViewCell.swift in Sources */,
 				437FAE292495215F00ADAD4C /* DetailsViewCollectionViewCell.swift in Sources */,
 				43EBF7A52494327800D15735 /* DetailsViewController.swift in Sources */,
+				431A814D24994B960020783A /* HttpClient.swift in Sources */,
 				4384511724917A6600772280 /* GalleryViewController.swift in Sources */,
 				431A8141249936460020783A /* K.swift in Sources */,
 				4384511324917A6600772280 /* AppDelegate.swift in Sources */,
@@ -396,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431A814F2499545E0020783A /* URLSessionMock.swift in Sources */,
 				4384512A24917A6700772280 /* GalleryManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,8 +27,9 @@ struct GalleryManager: GalleryManagerProtocol {
     
     func performRequest(with url: String) {
         if let url = URL(string: url) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url){ (data, response, error) in
+            let httpClient = HttpClient(session: URLSession(configuration: .default))
+            
+            httpClient.get(url: url){ (data, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error: error!)
                     return
@@ -39,7 +40,6 @@ struct GalleryManager: GalleryManagerProtocol {
                     }
                 }
             }
-            task.resume()
         }
     }
     

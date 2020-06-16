@@ -47,6 +47,7 @@ class GalleryViewController: UIViewController {
         searchBar.showsCancelButton = false
         searchBar.placeholder = LocalizedStrings.search_bar_placeholder
         searchBar.delegate = self
+        searchBar.accessibilityIdentifier = K.searchBarAccessibilityIdentifier
         
         navigationItem.titleView = searchBar
     }

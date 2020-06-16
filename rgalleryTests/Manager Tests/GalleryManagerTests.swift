@@ -10,6 +10,17 @@ import XCTest
 @testable import rgallery
 
 class GalleryManagerTests: XCTestCase {
+    var httpClient: HttpClient!
+    let session = MockURLSession()
+    
+    override func setUp() {
+        super.setUp()
+        httpClient = HttpClient(session: session)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
 
     func testPrepareData(){
         let manager = GalleryManager()
@@ -49,6 +60,60 @@ class GalleryManagerTests: XCTestCase {
         XCTAssertEqual(parsedGalleryModel?.thumbs[0].title, "VIP- SUBJOI..thank me later", "title should be the same")
         XCTAssertEqual(parsedGalleryModel?.thumbs[0].url, "https://b.thumbs.redditmedia.com/JpzWwCgWAaYMFWzzchxzjHFQgavMvgd3tNnkqYrP1sk.jpg", "thumbnail url should be the same")
         XCTAssertEqual(parsedGalleryModel?.thumbs[0].subreddit, "House", "subreddit should be the same")
+    }
+    
+    func testPerformRequestWithURL() {
+        let url = URL(string: "https://www.reddit.com/r/house/top.json")
+        
+        httpClient.get(url: url!) { (success, response) in
+        }
+        
+        XCTAssert(session.lastURL == url)
+        
+    }
+    
+    func testPerformRequestResumeIsCalled() {
+        
+        let dataTask = MockURLSessionDataTask()
+        session.nextDataTask = dataTask
+        
+        let url = URL(string: "https://www.reddit.com/r/house/top.json")
+        
+        httpClient.get(url: url!) { (success, response) in
+        }
+        
+        XCTAssert(dataTask.resumeWasCalled, "task.resume() was called")
+    }
+    
+    func testPerformRequestDataIsNotNil() {
+        let dataInput = Data("""
+        {
+          "kind": "Listing",
+          "data": {
+            "children": [
+              {
+                "kind": "t3",
+                "data": {
+                  "subreddit": "House",
+                  "title": "VIP- SUBJOI..thank me later",
+                  "thumbnail": "https://b.thumbs.redditmedia.com/JpzWwCgWAaYMFWzzchxzjHFQgavMvgd3tNnkqYrP1sk.jpg"
+                }
+              }
+            ]
+          }
+        }
+        """.utf8)
+        
+        session.nextData = dataInput
+        
+        let expectation = XCTestExpectation(description: "NO")
+        
+        httpClient.get(url: URL(string: "https://www.reddit.com/r/house/top.json")!) { (data, error) in
+            XCTAssertEqual(data, dataInput)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1.0)
     }
 
 }

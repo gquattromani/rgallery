@@ -16,4 +16,5 @@ struct K {
     static let emptyViewIdentifier = "EmptyView"
     static let noResultsViewIdentifier = "NoResultsView"
     static let placeholderImage = "placeholder"
+    static let searchBarAccessibilityIdentifier = "MainSearchBar"
 }
