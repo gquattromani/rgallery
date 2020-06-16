@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GalleryData: Codable {
+struct GalleryDataRoot: Codable {
     let kind: String
     let data: DataGallery
 }

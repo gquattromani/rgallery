@@ -12,7 +12,7 @@ struct GalleryModel {
     let thumbs: [Thumb]
 }
 
-struct Thumb {
+struct Thumb: Equatable {
     let title: String
     let url: String
     let subreddit: String

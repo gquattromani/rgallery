@@ -8,12 +8,16 @@
 
 import Foundation
 
+protocol GalleryManagerProtocol {
+    func fetchGallery(keyword: String) -> Void
+}
+
 protocol GalleryManagerDelegate {
     func didUpdateData(_ galleryManager: GalleryManager, gallery: GalleryModel)
     func didFailWithError(error: Error)
 }
 
-struct GalleryManager {
+struct GalleryManager: GalleryManagerProtocol {
     var delegate: GalleryManagerDelegate?
     
     func fetchGallery(keyword: String){
@@ -42,7 +46,7 @@ struct GalleryManager {
     func parseJSON(_ galleryData: Data) -> GalleryModel? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(GalleryData.self, from: galleryData)
+            let decodedData = try decoder.decode(GalleryDataRoot.self, from: galleryData)
             let gallery = GalleryModel(thumbs: prepareData(for: decodedData))
             return gallery
         } catch {
@@ -51,7 +55,7 @@ struct GalleryManager {
         }
     }
     
-    func prepareData(for decodedData: GalleryData) -> [Thumb]{
+    func prepareData(for decodedData: GalleryDataRoot) -> [Thumb]{
         var res: [Thumb] = []
         let children = decodedData.data.children
         for child in children {
