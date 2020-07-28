@@ -6,7 +6,6 @@ The application has two main screens: in the first there is a search bar that ca
 
 # Technical details
 
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
 |                |ASCII                          |
 |----------------|-------------------------------|
 |Xcode 			 |`'11.1'`            			 |
